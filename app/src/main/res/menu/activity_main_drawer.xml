@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:showIn="navigation_view">
+
+  <group android:checkableBehavior="single">
+    <item
+      android:id="@+id/fragment_home"
+      android:icon="@drawable/ic_home_black_24dp"
+      android:title="@string/home"/>
+
+    <item
+      android:id="@+id/fragment_wifi_favorite"
+      android:icon="@drawable/ic_signal_wifi_4_bar_black_24dp"
+      android:title="@string/favorite_wifi"/>
+
+    <item
+      android:id="@+id/fragment_search_result"
+      android:icon="@drawable/ic_search"
+      android:title="@string/search"
+      android:visible="false"/>
+
+    <item
+      android:id="@+id/fragment_profile_settings"
+      android:icon="@drawable/ic_menu_manage"
+      android:title="@string/profile_settings"/>
+
+    <item
+      android:id="@+id/fragment_recycler_view"
+      android:visible="false"/>
+
+  </group>
+
+
+</menu>
