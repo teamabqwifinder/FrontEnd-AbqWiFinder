@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
 
     switch (item.getItemId()) {
       case R.id.fragment_home:
-        loadFragment(new HomeFragment(), R.id.fragment_container, "fragment_home", null);
+        loadFragment(new LocationListFragment(), R.id.fragment_container, "fragment_home", null);
         break;
       case R.id.fragment_wifi_favorite:
         Toast.makeText(context, "Feature not yet available", Toast.LENGTH_SHORT).show();
