@@ -1,6 +1,7 @@
 package deepdive.cnm.edu.frontend_abqwifinder.controller;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,13 +10,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import deepdive.cnm.edu.frontend_abqwifinder.AbqWifinderApplication;
 import deepdive.cnm.edu.frontend_abqwifinder.R;
 import deepdive.cnm.edu.frontend_abqwifinder.controller.dummy.DummyContent;
 import deepdive.cnm.edu.frontend_abqwifinder.controller.dummy.DummyContent.DummyItem;
 
 import deepdive.cnm.edu.frontend_abqwifinder.model.Location;
+import deepdive.cnm.edu.frontend_abqwifinder.service.GoogleSignInService;
+import deepdive.cnm.edu.frontend_abqwifinder.service.WiFinderBackendClient.InstanceHolder;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import retrofit2.Response;
 
 /**
  * A fragment representing a list of Items. <p /> Activities containing this fragment MUST implement
@@ -27,6 +33,9 @@ public class LocationListFragment extends Fragment {
   private int mColumnCount = 1;
 
   private OnListFragmentInteractionListener mListener;
+  private List<Location> locations;
+  private RecyclerView view;
+  private LocationRecyclerViewAdapter adapter;
 
   /**
    * Mandatory empty constructor for the fragment manager to instantiate the fragment (e.g. upon
@@ -44,7 +53,7 @@ public class LocationListFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_location_list, container, false);
+    view = (RecyclerView) inflater.inflate(R.layout.fragment_location_list, container, false);
 
     // Set the adapter
     if (view instanceof RecyclerView) {
@@ -52,11 +61,10 @@ public class LocationListFragment extends Fragment {
       RecyclerView recyclerView = (RecyclerView) view;
       recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-      List<Location> locations = new ArrayList<>();
-      Location location = new Location();
-      location.setName("Stemulus Center");
-      locations.add(location);
-      recyclerView.setAdapter(new LocationRecyclerViewAdapter(locations, mListener));
+      locations = new ArrayList<>();
+      adapter = new LocationRecyclerViewAdapter(locations, mListener);
+      recyclerView.setAdapter(adapter);
+      new LocationGetterTask().execute();
     }
     return view;
   }
@@ -91,5 +99,28 @@ public class LocationListFragment extends Fragment {
 
     // TODO: Update argument type and name
     void onListFragmentInteraction(Location item);
+  }
+
+  public class LocationGetterTask extends AsyncTask<Void, Void, List<Location>> {
+
+    @Override
+    protected List<Location> doInBackground(Void... voids) {
+      String token = AbqWifinderApplication.getInstance().getString(R.string.authorization_value_format,
+          GoogleSignInService.getInstance().getAccount().getIdToken());
+      try {
+        Response<List<Location>> response = InstanceHolder.INSTANCE.get(token).execute();
+        return response.body();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      return null;
+    }
+
+    @Override
+    protected void onPostExecute(List<Location> result) {
+      locations.clear();
+      locations.addAll(result);
+      adapter.notifyDataSetChanged();
+    }
   }
 }

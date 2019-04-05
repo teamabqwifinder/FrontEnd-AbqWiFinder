@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import deepdive.cnm.edu.frontend_abqwifinder.R;
@@ -23,6 +25,8 @@ public class LocationRecyclerViewAdapter extends
 
   private final List<Location> mValues;
   private final OnListFragmentInteractionListener mListener;
+  private ImageView imageView;
+  private RatingBar ratingBar;
 
   public LocationRecyclerViewAdapter(List<Location> items,
       OnListFragmentInteractionListener listener) {
@@ -34,14 +38,14 @@ public class LocationRecyclerViewAdapter extends
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(parent.getContext())
         .inflate(R.layout.fragment_location, parent, false);
-    return new ViewHolder(view);
+    return new ViewHolder(view, imageView, ratingBar);
   }
 
   @Override
   public void onBindViewHolder(final ViewHolder holder, int position) {
     holder.mItem = mValues.get(position);
     //holder.mIdView.setText();
-    holder.mContentView.setText(mValues.get(position).getName());
+    holder.mContentView.setText(mValues.get(position).getAddress());
 
     holder.mView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -66,12 +70,16 @@ public class LocationRecyclerViewAdapter extends
     public final TextView mIdView;
     public final TextView mContentView;
     public Location mItem;
+    public final ImageView imageView;
+    public final RatingBar ratingBar;
 
-    public ViewHolder(View view) {
+    public ViewHolder(View view, ImageView imageView, RatingBar ratingBar) {
       super(view);
       mView = view;
       mIdView = (TextView) view.findViewById(R.id.item_number);
       mContentView = (TextView) view.findViewById(R.id.content);
+      this.imageView = imageView;
+      this.ratingBar = ratingBar;
     }
 
     @Override

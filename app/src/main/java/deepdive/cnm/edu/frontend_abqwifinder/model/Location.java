@@ -1,14 +1,17 @@
 package deepdive.cnm.edu.frontend_abqwifinder.model;
 
+import com.google.gson.annotations.Expose;
+
 public class Location {
 
-  private String name;
+  @Expose
+  private String address;
 
-  public String getName() {
-    return name;
+  public String getAddress() {
+    return address;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setAddress(String address) {
+    this.address = address;
   }
 }
