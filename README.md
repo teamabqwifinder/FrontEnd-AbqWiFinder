@@ -54,3 +54,35 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 [Full (including 3rd party) licenses and copyrights](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/Copyright.md)
+
+### Instructions for Building ABQWiFinder
+
+1. Clone the repository into a local Android Studio or preferred IDE project.
+
+2. Open up Application on your IDE and run through emulator or personal Android.
+
+3. Build the device with a minimum of API 24. 
+
+### Instructions for Running ABQWiFinder
+
+1. The Google Sign-In Screen will load upon starting the application.
+
+2. After Sign-In, the User will be taken to the home screen.
+
+3. The main navigation is through the side drawer, click the horizontal three bars in the upper left corner of the screen.
+
+4. This will reveal a side navigation drawer with options for favorite locations, home screen and settings.
+
+5. Click on the Home screen to see a list view of all locations that are currently enabled for the application. Depending on which version of application you are using.
+
+#### History
+
+- You can access this view to see the past histories and locations you have been too and saved. This is populated from the home screen. 
+
+#### Home
+
+- You can view this screen to see a scrolling list view of all locations that are currently in the application's database. This list is being continually updated with new entries and details. 
+
+#### Settings
+
+- You can access this screen to view any settings you may wish to change depending on preferences like if you want a developer space with food and drink, etc. 
