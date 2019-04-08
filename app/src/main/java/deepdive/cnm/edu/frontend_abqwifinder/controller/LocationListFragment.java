@@ -34,7 +34,7 @@ public class LocationListFragment extends Fragment {
 
   private OnListFragmentInteractionListener mListener;
   private List<Location> locations;
-  private RecyclerView view;
+  private View view;
   private LocationRecyclerViewAdapter adapter;
 
   /**
@@ -53,19 +53,17 @@ public class LocationListFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    view = (RecyclerView) inflater.inflate(R.layout.fragment_location_list, container, false);
-
+    view = inflater.inflate(R.layout.fragment_location_list, container, false);
     // Set the adapter
-    if (view instanceof RecyclerView) {
-      Context context = view.getContext();
-      RecyclerView recyclerView = (RecyclerView) view;
-      recyclerView.setLayoutManager(new LinearLayoutManager(context));
+    Context context = view.getContext();
+    RecyclerView recyclerView = view.findViewById(R.id.list);
+    recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-      locations = new ArrayList<>();
-      adapter = new LocationRecyclerViewAdapter(locations, mListener);
-      recyclerView.setAdapter(adapter);
-      new LocationGetterTask().execute();
-    }
+    locations = new ArrayList<>();
+    adapter = new LocationRecyclerViewAdapter(locations, mListener);
+    recyclerView.setAdapter(adapter);
+    new LocationGetterTask().execute();
+//    MapFragment map = getChildFragmentManager().findFragmentByTag("MapFragment");
     return view;
   }
 
@@ -77,7 +75,7 @@ public class LocationListFragment extends Fragment {
       mListener = (OnListFragmentInteractionListener) context;
     } else {
       //throw new RuntimeException(context.toString()
-        //  + " must implement OnListFragmentInteractionListener");
+      //  + " must implement OnListFragmentInteractionListener");
     }
   }
 
@@ -105,8 +103,9 @@ public class LocationListFragment extends Fragment {
 
     @Override
     protected List<Location> doInBackground(Void... voids) {
-      String token = AbqWifinderApplication.getInstance().getString(R.string.authorization_value_format,
-          GoogleSignInService.getInstance().getAccount().getIdToken());
+      String token = AbqWifinderApplication.getInstance()
+          .getString(R.string.authorization_value_format,
+              GoogleSignInService.getInstance().getAccount().getIdToken());
       try {
         Response<List<Location>> response = InstanceHolder.INSTANCE.get(token).execute();
         return response.body();
@@ -118,9 +117,9 @@ public class LocationListFragment extends Fragment {
 
     @Override
     protected void onPostExecute(List<Location> result) {
-      locations.clear();
-       locations.addAll(result);
-      adapter.notifyDataSetChanged();
+//      locations.clear();
+//      locations.addAll(result);
+//      adapter.notifyDataSetChanged();
     }
   }
 }
