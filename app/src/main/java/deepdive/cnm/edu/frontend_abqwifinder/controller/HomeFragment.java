@@ -1,20 +1,13 @@
 package deepdive.cnm.edu.frontend_abqwifinder.controller;
 
-
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import deepdive.cnm.edu.frontend_abqwifinder.AbqWifinderApplication;
+
 import deepdive.cnm.edu.frontend_abqwifinder.R;
-import deepdive.cnm.edu.frontend_abqwifinder.model.Location;
-import deepdive.cnm.edu.frontend_abqwifinder.service.GoogleSignInService;
-import deepdive.cnm.edu.frontend_abqwifinder.service.WiFinderBackendClient.InstanceHolder;
-import java.io.IOException;
-import java.util.List;
-import retrofit2.Response;
+
 
 
 /**

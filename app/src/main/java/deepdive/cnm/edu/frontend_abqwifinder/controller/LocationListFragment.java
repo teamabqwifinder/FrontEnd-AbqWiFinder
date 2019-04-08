@@ -119,7 +119,7 @@ public class LocationListFragment extends Fragment {
     @Override
     protected void onPostExecute(List<Location> result) {
       locations.clear();
-      locations.addAll(result);
+       locations.addAll(result);
       adapter.notifyDataSetChanged();
     }
   }
