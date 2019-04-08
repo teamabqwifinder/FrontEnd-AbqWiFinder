@@ -34,5 +34,8 @@
   <string name="sign_out">sign out</string>
   <string name="AbqWiFinder">AbqWiFinder</string>
   <string name="authorization_value_format">Bearer %s</string>
+  <string name="placeholder">placeholder</string>
+  <string name="coffeeshop">coffeeshop</string>
+  <string name="settings">settings</string>
   <string name="title_activity_maps">Map</string>
 </resources>

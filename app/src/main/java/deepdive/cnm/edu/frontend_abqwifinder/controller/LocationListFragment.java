@@ -60,10 +60,10 @@ public class LocationListFragment extends Fragment {
     recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
     locations = new ArrayList<>();
-    adapter = new LocationRecyclerViewAdapter(locations, mListener);
+    adapter = new LocationRecyclerViewAdapter(locations, mListener, this);
     recyclerView.setAdapter(adapter);
     new LocationGetterTask().execute();
-//    MapFragment map = getChildFragmentManager().findFragmentByTag("MapFragment");
+    //MapFragment map = getChildFragmentManager().findFragmentByTag("MapFragment");
     return view;
   }
 
@@ -117,9 +117,9 @@ public class LocationListFragment extends Fragment {
 
     @Override
     protected void onPostExecute(List<Location> result) {
-//      locations.clear();
-//      locations.addAll(result);
-//      adapter.notifyDataSetChanged();
+      locations.clear();
+      locations.addAll(result);
+      adapter.notifyDataSetChanged();
     }
   }
 }

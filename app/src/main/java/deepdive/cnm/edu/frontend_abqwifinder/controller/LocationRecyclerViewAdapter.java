@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import deepdive.cnm.edu.frontend_abqwifinder.R;
 import deepdive.cnm.edu.frontend_abqwifinder.controller.LocationListFragment.OnListFragmentInteractionListener;
 import deepdive.cnm.edu.frontend_abqwifinder.controller.dummy.DummyContent.DummyItem;
@@ -25,20 +26,21 @@ public class LocationRecyclerViewAdapter extends
 
   private final List<Location> mValues;
   private final OnListFragmentInteractionListener mListener;
-  private ImageView imageView;
-  private RatingBar ratingBar;
+  private LocationListFragment locationListFragment;
 
   public LocationRecyclerViewAdapter(List<Location> items,
-      OnListFragmentInteractionListener listener) {
+      OnListFragmentInteractionListener listener,
+      LocationListFragment locationListFragment) {
     mValues = items;
     mListener = listener;
+    this.locationListFragment = locationListFragment;
   }
 
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     View view = LayoutInflater.from(parent.getContext())
         .inflate(R.layout.fragment_location, parent, false);
-    return new ViewHolder(view, imageView, ratingBar);
+    return new ViewHolder(view);
   }
 
   @Override
@@ -46,6 +48,9 @@ public class LocationRecyclerViewAdapter extends
     holder.mItem = mValues.get(position);
     //holder.mIdView.setText();
     holder.mContentView.setText(mValues.get(position).getAddress());
+
+    Glide.with(locationListFragment).load(mValues.get(position).getPictures())
+        .into(holder.imageView);
 
     holder.mView.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -70,16 +75,17 @@ public class LocationRecyclerViewAdapter extends
     public final TextView mIdView;
     public final TextView mContentView;
     public Location mItem;
-    public final ImageView imageView;
-    public final RatingBar ratingBar;
+    private ImageView imageView;
+    private RatingBar ratingBar;
 
-    public ViewHolder(View view, ImageView imageView, RatingBar ratingBar) {
+
+    public ViewHolder(View view) {
       super(view);
       mView = view;
       mIdView = (TextView) view.findViewById(R.id.item_number);
       mContentView = (TextView) view.findViewById(R.id.content);
-      this.imageView = imageView;
-      this.ratingBar = ratingBar;
+      imageView = (ImageView) view.findViewById(R.id.location_image);
+      ratingBar = (RatingBar) view.findViewById(R.id.ratingstar);
     }
 
     @Override

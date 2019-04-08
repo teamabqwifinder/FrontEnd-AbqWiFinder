@@ -6,6 +6,16 @@ public class Location {
 
   @Expose
   private String address;
+  @Expose
+  private String pictures;
+
+  public String getPictures() {
+    return pictures;
+  }
+
+  public void setPictures(String pictures) {
+    this.pictures = pictures;
+  }
 
   public String getAddress() {
     return address;
