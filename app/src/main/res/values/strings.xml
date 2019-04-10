@@ -38,4 +38,5 @@
   <string name="coffeeshop">coffeeshop</string>
   <string name="settings">settings</string>
   <string name="title_activity_maps">Map</string>
+  <string name="search_title">search by location</string>
 </resources>

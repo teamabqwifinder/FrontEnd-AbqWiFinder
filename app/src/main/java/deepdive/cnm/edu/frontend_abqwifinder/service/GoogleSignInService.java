@@ -7,7 +7,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import deepdive.cnm.edu.frontend_abqwifinder.AbqWifinderApplication;
 import deepdive.cnm.edu.frontend_abqwifinder.R;
-
+/**
+ * This class contains a google sign service that was implemented using an client Id web that was
+ * retrieved using the google cloud service.
+ *
+ */
 public class GoogleSignInService {
 
   private GoogleSignInClient client;

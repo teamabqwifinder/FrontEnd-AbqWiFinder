@@ -15,4 +15,11 @@
     android:title="@string/sign_out"
     app:showAsAction="never"/>
 
+  <item
+    android:id="@+id/search"
+    android:title="@string/search_title"
+    android:icon="@drawable/ic_search"
+    app:actionViewClass="android.widget.SearchView"
+    app:showAsAction="always"/>
+
 </menu>

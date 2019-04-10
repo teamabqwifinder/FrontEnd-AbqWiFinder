@@ -43,6 +43,9 @@ We selected this particular project because of its potential ability to positive
 [Front-End ERD](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/Capstone_ERD.pdf)
 [DDL]
 
+## Documentation
+For more details on current classes and methods, see [Javadoc](docs/api/)
+
 ### Licenses
 
 Copyright 2019 Faycel Beji, Felipe Cook, Josh DeLeon & Deep Dive Coding

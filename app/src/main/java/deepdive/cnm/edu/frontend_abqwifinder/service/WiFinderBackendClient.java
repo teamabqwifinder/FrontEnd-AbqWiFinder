@@ -10,7 +10,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-
+/**
+ * This class contains the list of locations from our database. Also
+ * contains an interface that communicates with the back end server.
+ *
+ */
 public interface WiFinderBackendClient {
 
   @GET("/rest/wifinderbackend/locations")

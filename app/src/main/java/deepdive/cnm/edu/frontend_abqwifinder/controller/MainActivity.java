@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
+
+    loadFragment(new LocationListFragment(), R.id.fragment_container, "fragment_home", null);
+
   }
 
   @Override
