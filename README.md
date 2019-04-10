@@ -61,7 +61,7 @@ Samsung SM - G930U- On this emulator it seemed to work functionally okay. The ap
 
 [Back-End ERD](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/WiFinderBackEndFinalUpdate.pdf)
 [Front-End ERD](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/Capstone_ERD.pdf)
-[DDL]
+[DDL](https://github.com/teamabqwifinder/BackEnd-AbqWiFinder/blob/master/DDL.sql)
 
 ## Documentation
 For more details on current classes and methods, see [Javadoc](docs/api/)
