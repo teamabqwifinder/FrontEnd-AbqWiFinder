@@ -82,20 +82,10 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ### Instructions for Building ABQWiFinder
 
-[Build Instructions]()
+[Build Instructions](https://github.com/teamabqwifinder/Docs/blob/master/Basic-User-Instructions.md)
 
 ### Instructions for Running ABQWiFinder
 
 [Deployment Instructions](https://github.com/teamabqwifinder/Docs/blob/master/Deployment-Instructions.md)
 
-#### History
 
-- You can access this view to see the past histories and locations you have been too and saved. This is populated from the home screen. 
-
-#### Home
-
-- You can view this screen to see a scrolling list view of all locations that are currently in the application's database. This list is being continually updated with new entries and details. 
-
-#### Settings
-
-- You can access this screen to view any settings you may wish to change depending on preferences like if you want a developer space with food and drink, etc. 
