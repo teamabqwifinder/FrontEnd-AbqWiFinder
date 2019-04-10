@@ -90,6 +90,12 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ### Stretch Goals
 
+1. Having local businesses in our database for users.
 
+2. Updating the search bar to search through this database.
+
+3. Reformatting the user settings fragment so that users can modify their searches.
+
+4. Allowing users to submit text reviews of locations for other users to see. 
 
 
