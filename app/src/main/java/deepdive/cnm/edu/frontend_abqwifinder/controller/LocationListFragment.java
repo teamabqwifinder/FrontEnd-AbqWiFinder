@@ -103,6 +103,9 @@ public class LocationListFragment extends Fragment {
 
     @Override
     protected List<Location> doInBackground(Void... voids) {
+      if (GoogleSignInService.getInstance().getAccount() == null) {
+        return null;
+      }
       String token = AbqWifinderApplication.getInstance()
           .getString(R.string.authorization_value_format,
               GoogleSignInService.getInstance().getAccount().getIdToken());
@@ -117,6 +120,9 @@ public class LocationListFragment extends Fragment {
 
     @Override
     protected void onPostExecute(List<Location> result) {
+      if (result == null) {
+        return;
+      }
       locations.clear();
       locations.addAll(result);
       adapter.notifyDataSetChanged();
