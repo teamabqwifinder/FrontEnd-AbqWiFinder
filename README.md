@@ -4,9 +4,12 @@
 
 We selected this particular project because of its potential ability to positively effect the developer scene in the local Albuquerque Area. We have seen in the last few years, exponential growth from the tech sector in Albuquerque and the greater region, this is in part because of local entrepreneurs who are putting in the hard work everyday trying to get their ideas off the ground. The purpose of the ABQ WiFinder project is that it will enhance the voice of these entrepreneurs when dealing with local businesses or spaces. Strong developers need good development spaces, places that have a strong wifi connection are essential to these developers and our Application will support this endevour. 
 
+But most of all this application will function at its core as a wifinder application that anyone can use. 
+
 ### A “functional inventory” for that repository—i.e. what functional components of the overall project are implemented by code in that repository?
 
-- A login screen powered by Google Sign In
+  Currently the application in it's Alpha stage is mostly cosmetic but does show several locations and an included map. 
+- A login screen powered by Google Sign In [Google Sign In](https://github.com/googlesamples/google-services/tree/master/android/signin)
 - Several fragments that the user can switch between. 
 
 ### TEAM ROSTER
@@ -17,7 +20,24 @@ We selected this particular project because of its potential ability to positive
 
 ### A description of the current state of completion/readiness of this component, or your project as a whole. This should include a “hit list” of deficiencies: any unimplemented/incomplete elements, and known bugs, that would have to be implemented or corrected for a usable prototype (i.e. one that could be given to a skilled user for testing and feedback), ordered with the most urgent items first.
 
+This project is still in its Alpha phase of testing and deployment. While features are able to be viewed and the google maps is currently working, it is still unable to retrieve data from local developer spaces. This will be enabled in the beta version and this will include the main functionality package. Bugs still occur sporadically when switching fragments.
+
+Our order of priorities:
+1. The Application runs local businesses information on its server
+2. Implementing the google maps to also display this information
+3. Creation of the favorite locations code, to enable users to save favorite locations. 
+
 ### A list of platforms (Java versions, Android APIs, OS versions, specific hardware, etc.) on which you’ve tested the submitted version of this component of your project, any hardware/software/orientation restrictions that you’re aware of. (This includes restrictions on device language, orientation, etc.)
+
+#### Devices
+
+Motorola G6 API 26 - On this device it seemed to work functionally okay. The app was able to jump from correct fragment to correct fragment.
+
+#### Emulators
+
+Nexus 5X API 24 - On this emulator it seemed to work functionally okay. The app was able to jump from correct fragment to correct fragment.
+
+Samsung SM - G930U- On this emulator it seemed to work functionally okay. The app was able to jump from correct fragment to correct fragment.
 
 ### For client side components, a list of aesthetic/cosmetic (not functional) improvements that you think would improve this component. This list should be ordered, with those that would give the most improvement (in your opinion) listed first.
 
