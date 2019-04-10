@@ -60,7 +60,9 @@ Samsung SM - G930U- On this emulator it seemed to work functionally okay. The ap
 ### Links to the up-to-date ERD and DDL for this component’s data model.
 
 [Back-End ERD](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/WiFinderBackEndFinalUpdate.pdf)
+
 [Front-End ERD](https://github.com/teamabqwifinder/ABQ-WiFinder-Pre-Planning/blob/master/Capstone_ERD.pdf)
+
 [DDL](https://github.com/teamabqwifinder/BackEnd-AbqWiFinder/blob/master/DDL.sql)
 
 ## Documentation
